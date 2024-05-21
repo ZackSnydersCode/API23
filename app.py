@@ -5,6 +5,7 @@ import os
 import datetime
 import schedule
 import time
+import threading
 import google.generativeai as genai
 app = Flask(__name__)
 genai.configure(
@@ -13,9 +14,6 @@ genai.configure(
 content = "null"
 model = genai.GenerativeModel("gemini-pro")
 chat = model.start_chat(history=[])
-@app.route('/')
-def raw_root():
-    return "<style>body{backgroundColor:black;color:green;}</style>Done----> code 111 null of status error as a code 404"
 @app.route('/GoogleGenAI',methods=['GET'])
 def dusky():
     return content
@@ -53,8 +51,13 @@ def strange():
     if current_time == '00:00:00':
         zebronica()
     
+def run_scheduler():
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
-schedule.every(1).seconds.do(strange)
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+schedule.every(1).minutes.do(strange)
+scheduler_thread = threading.Thread(target=run_scheduler)
+scheduler_thread.start()
+
+
