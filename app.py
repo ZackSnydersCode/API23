@@ -6,6 +6,7 @@ import datetime
 import schedule
 import time
 import threading
+import random
 import google.generativeai as genai
 app = Flask(__name__)
 genai.configure(
@@ -21,8 +22,8 @@ chat = model.start_chat(history=[])
 def dusky():
     return content
 def zebronica():
-    iterator = int(request.args.get('i'))
     query = readQueries()
+    iterator = random.randint(1,len(query))
     question = query[iterator]['q']
     response = chat.send_message(question)
     vision = getVision(query[iterator]['c'])
