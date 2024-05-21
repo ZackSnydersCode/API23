@@ -1,4 +1,4 @@
 Flask==3.0.3
 requests==2.31.0
 google-generativeai
-schedule
+schedule==1.2.1
