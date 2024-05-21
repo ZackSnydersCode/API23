@@ -9,6 +9,9 @@ genai.configure(
 )
 model = genai.GenerativeModel("gemini-pro")
 chat = model.start_chat(history=[])
+@app.route('/')
+def raw_root():
+    return "<h1>Hello</h1>"
 @app.route('/GoogleGenAI',methods=['GET'])
 def homepage():
     iterator = int(request.args.get('i'))
