@@ -2,24 +2,28 @@ from flask import Flask,request,jsonify
 import json
 import requests
 import os
+import datetime
+import schedule
+import time
 import google.generativeai as genai
 app = Flask(__name__)
 genai.configure(
     api_key = os.environ.get('API_KEY_GOOGLE_GEN')
 )
+content = "null"
 model = genai.GenerativeModel("gemini-pro")
 chat = model.start_chat(history=[])
-@app.route('/')
-def raw_root():
-    return "<h1>Hello</h1>"
 @app.route('/GoogleGenAI',methods=['GET'])
-def homepage():
+def dusky():
+    return content
+def zebronica():
     iterator = int(request.args.get('i'))
     query = readQueries()
     question = query[iterator]['q']
     response = chat.send_message(question)
     vision = getVision(query[iterator]['c'])
-    return jsonify({'blog':response.text,'img':vision})
+    content = jsonify({'blog':response.text,'img':vision})
+
 def readQueries():
     try:
         with open('queries.json','r') as q:
@@ -41,3 +45,13 @@ def getVision(query):
     except Exception as e:
         return e
 
+def strange():
+    current_time = datetime.datetime.now().strftime('%H:%M:%S')
+    if current_time == '00:00:00':
+        zebronica()
+    
+
+schedule.every(1).seconds.do(strange)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
