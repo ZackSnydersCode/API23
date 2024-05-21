@@ -1,0 +1,42 @@
+[
+    {
+        "q": "What are the benefits of regular physical exercise?",
+        "c": "exercise"
+    },
+    {
+        "q": "How does a balanced diet contribute to overall health?",
+        "c": "diet"
+    },
+    {
+        "q": "What are the signs and symptoms of dehydration?",
+        "c": "dehydration"
+    },
+    {
+        "q": "How can stress management techniques improve mental health?",
+        "c": "stress"
+    },
+    {
+        "q": "What are the health risks associated with smoking?",
+        "c": "smoking"
+    },
+    {
+        "q": "How can adequate sleep affect physical and mental well-being?",
+        "c": "sleep"
+    },
+    {
+        "q": "What are the common symptoms of a heart attack?",
+        "c": "heart"
+    },
+    {
+        "q": "How can regular health check-ups prevent chronic diseases?",
+        "c": "health check-up"
+    },
+    {
+        "q": "What are the best practices for maintaining good dental hygiene?",
+        "c": "dental hygiene"
+    },
+    {
+        "q": "How does staying hydrated benefit the body?",
+        "c": "hydration"
+    }
+]
