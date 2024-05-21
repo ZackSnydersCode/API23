@@ -13,6 +13,9 @@ genai.configure(
 content = "null"
 model = genai.GenerativeModel("gemini-pro")
 chat = model.start_chat(history=[])
+@app.route('/')
+def raw_root():
+    return "Done----> code 111 null of status error as a code 404"
 @app.route('/GoogleGenAI',methods=['GET'])
 def dusky():
     return content
