@@ -13,7 +13,7 @@ genai.configure(
 )
 @app.route('/')
 def raw_root():
-    return '<style>body{backgroundColor:black;color:green;}</style>Status code 111 State ----> Done--> can proceed with all arguments (server running with configurations)'
+    return '<style>body{background:black;color:#03fc88;}</style>Status code 111 State ----> Done--> can proceed with all arguments (server running with configurations)'
 content = "null"
 model = genai.GenerativeModel("gemini-pro")
 chat = model.start_chat(history=[])
