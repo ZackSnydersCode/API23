@@ -11,6 +11,9 @@ app = Flask(__name__)
 genai.configure(
     api_key = os.environ.get('API_KEY_GOOGLE_GEN')
 )
+@app.route('/')
+def raw_root():
+    return '<style>body{backgroundColor:black;color:green;}</style>Status code 111 State ----> Done--> can proceed with all arguments (server running with configurations)'
 content = "null"
 model = genai.GenerativeModel("gemini-pro")
 chat = model.start_chat(history=[])
