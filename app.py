@@ -21,7 +21,7 @@ chat = model.start_chat(history=[])
 @app.route('/GoogleGenAI',methods=['GET'])
 def dusky():
     #return content variable
-    return jsonify({'blog':"Soothes Nausea and Digestion: Ginger is a champion when it comes to calming nausea and indigestion. It can help ease stomach upset, vomiting, and even motion sickness. Studies suggest ginger may speed up the emptying of your stomach, further aiding digestion.",'img':'https://images.pexels.com/photos/3692609/pexels-photo-3692609.jpeg'})
+    return jsonify({'blog':"Soothes Nausea and Digestion: Ginger is a champion when it comes to calming nausea and indigestion. It can help ease stomach upset, vomiting, and even motion sickness. Studies suggest ginger may speed up the emptying of your stomach, further aiding digestion.",'img':'https://images.pexels.com/photos/984944/pexels-photo-984944.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'})
 def zebronica():
     query = readQueries()
     iterator = random.randint(1,len(query))
