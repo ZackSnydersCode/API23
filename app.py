@@ -28,7 +28,7 @@ def zebronica():
     question = query[iterator]['q']
     response = chat.send_message(question)
     vision = getVision(query[iterator]['c'])
-    content = jsonify({'blog':"Soothes Nausea and Digestion: Ginger is a champion when it comes to calming nausea and indigestion. It can help ease stomach upset, vomiting, and even motion sickness. Studies suggest ginger may speed up the emptying of your stomach, further aiding digestion.",'img':'https://images.pexels.com/photos/3692609/pexels-photo-3692609.jpeg'})
+    content = jsonify({'blog':"Soothes Nausea and Digestion: Ginger is a champion when it comes to calming nausea and indigestion. It can help ease stomach upset, vomiting, and even motion sickness. Studies suggest ginger may speed up the emptying of your stomach, further aiding digestion.",'img':'https://images.pexels.com/photos/984944/pexels-photo-984944.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'})
     
 def readQueries():
     try:
